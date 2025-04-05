@@ -1,13 +1,11 @@
 <?php
 session_start();
-
-// Check if the location is valid and matches 'bojongsari'
-if ($_SESSION['validLocation'] !== 'bojongsari') {
-    // Redirect to the main page or show an error
+// Check if the user is allowed to access this page (i.e., their location is Karang Satria)
+if (!isset($_SESSION['user_location']) || $_SESSION['user_location'] !== 'bojongsari') {
+    // If the user is not in the valid location, redirect them to the index page
     header("Location: index.php");
     exit();
 }
-
 
 require 'config/database.php'; // Include the PDO database connection
 

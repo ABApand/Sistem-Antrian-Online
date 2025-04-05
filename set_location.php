@@ -1,11 +1,8 @@
 <?php
 session_start();
 
-// Check if the location is set via POST
+// Check if location is sent through POST request
 if (isset($_POST['location'])) {
-    $_SESSION['validLocation'] = $_POST['location'];
-    echo "Location set to: " . $_POST['location'];
-} else {
-    echo "No location provided!";
+    $_SESSION['user_location'] = $_POST['location']; // Store user location in session
 }
 ?>

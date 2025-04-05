@@ -176,85 +176,81 @@ $bojongsari = ['lat' => -6.408020836166138, 'lon' => 106.7364839729399, 'radius'
         }
 
         function getUserLocation() {
-    // Show loading spinner
-    document.getElementById("spinnerContainer").style.display = "block";
+            // Show loading spinner
+            document.getElementById("spinnerContainer").style.display = "block";
 
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-            userLat = position.coords.latitude;
-            userLon = position.coords.longitude;
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    userLat = position.coords.latitude;
+                    userLon = position.coords.longitude;
 
-            // Hide loading spinner
-            document.getElementById("spinnerContainer").style.display = "none";
+                    // Hide loading spinner
+                    document.getElementById("spinnerContainer").style.display = "none";
 
-            // Marker untuk lokasi pengguna
-            L.marker([userLat, userLon]).addTo(map).bindPopup("Lokasi Anda").openPopup();
+                    // Marker untuk lokasi pengguna
+                    L.marker([userLat, userLon]).addTo(map).bindPopup("Lokasi Anda").openPopup();
 
-            var distanceToKarangSatria = map.distance([userLat, userLon], [karangSatria.lat, karangSatria.lon]);
-            var distanceToBojongsari = map.distance([userLat, userLon], [bojongsari.lat, bojongsari.lon]);
+                    var distanceToKarangSatria = map.distance([userLat, userLon], [karangSatria.lat, karangSatria.lon]);
+                    var distanceToBojongsari = map.distance([userLat, userLon], [bojongsari.lat, bojongsari.lon]);
 
-            // If the user is within the radius, zoom and center on the user
-            if (distanceToKarangSatria <= karangSatria.radius) {
-                map.setView([userLat, userLon], 15); // Center and zoom in on the user's location
-                showModal('karangsatria');
-                // Store the valid location in the session
-                sessionStorage.setItem('validLocation', 'karangsatria');
-            } else if (distanceToBojongsari <= bojongsari.radius) {
-                map.setView([userLat, userLon], 15); // Center and zoom in on the user's location
-                showModal('bojongsari');
-                // Store the valid location in the session
-                sessionStorage.setItem('validLocation', 'bojongsari');
+                    // If the user is within the radius, zoom and center on the user
+                    if (distanceToKarangSatria <= karangSatria.radius) {
+                        map.setView([userLat, userLon], 15); // Center and zoom in on the user's location
+                        showModal('karangsatria');
+                        // Store the valid location in the session
+                        setLocationInSession('karangsatria');
+                    } else if (distanceToBojongsari <= bojongsari.radius) {
+                        map.setView([userLat, userLon], 15); // Center and zoom in on the user's location
+                        showModal('bojongsari');
+                        // Store the valid location in the session
+                        setLocationInSession('bojongsari');
+                    } else {
+                        alert("Anda tidak berada dalam radius lokasi yang tersedia.");
+                    }
+                }, function(error) {
+                    // Hide loading spinner on error
+                    document.getElementById("spinnerContainer").style.display = "none";
+                    alert("Tidak dapat mengakses lokasi. Pastikan izin lokasi sudah diberikan.");
+                });
             } else {
-                alert("Anda tidak berada dalam radius lokasi yang tersedia.");
-                sessionStorage.removeItem('validLocation');
+                // Hide loading spinner if geolocation is not supported
+                document.getElementById("spinnerContainer").style.display = "none";
+                alert("Geolocation tidak didukung oleh browser ini.");
             }
-        }, function(error) {
-            // Hide loading spinner on error
-            document.getElementById("spinnerContainer").style.display = "none";
-            alert("Tidak dapat mengakses lokasi. Pastikan izin lokasi sudah diberikan.");
-        });
-    } else {
-        // Hide loading spinner if geolocation is not supported
-        document.getElementById("spinnerContainer").style.display = "none";
-        alert("Geolocation tidak didukung oleh browser ini.");
-    }
-}
-
-
-// Function to show the confirmation modal with updated text
-function showModal(location) {
-    let locationName = "";
-    if (location === 'karangsatria') {
-        locationName = "Karang Satria";
-    } else if (location === 'bojongsari') {
-        locationName = "Bojongsari";
-    }
-
-    // Update the modal content dynamically based on the location
-    $('#locationModal .modal-body p').text(`Anda saat ini berada di lokasi ${locationName}. Apakah Anda ingin melanjutkan ke lokasi ini?`);
-
-    // Show the modal
-    $('#locationModal').modal('show');
-
-    // Set up the redirect action based on the location
-    $('#confirmRedirect').click(function() {
-        if (location === 'karangsatria') {
-            window.location.href = 'antrian_ks.php';
-        } else if (location === 'bojongsari') {
-            window.location.href = 'antrian_bjs.php';
-        }
-    });
-}
-// Function to set the location in PHP session
-function setLocationInSession(location) {
-            // Make an AJAX request to set the location in session
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "set_location.php", true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.send("location=" + location);
         }
 
+        // Function to show the confirmation modal with updated text
+        function showModal(location) {
+            let locationName = "";
+            if (location === 'karangsatria') {
+                locationName = "Karang Satria";
+            } else if (location === 'bojongsari') {
+                locationName = "Bojongsari";
+            }
 
+            // Update the modal content dynamically based on the location
+            $('#locationModal .modal-body p').text(`Anda saat ini berada di lokasi ${locationName}. Apakah Anda ingin melanjutkan ke lokasi ini?`);
+
+            // Show the modal
+            $('#locationModal').modal('show');
+
+            // Set up the redirect action based on the location
+            $('#confirmRedirect').click(function() {
+                if (location === 'karangsatria') {
+                    window.location.href = 'antrian_ks.php';
+                } else if (location === 'bojongsari') {
+                    window.location.href = 'antrian_bjs.php';
+                }
+            });
+        }
+
+        // Function to set the location in PHP session via AJAX
+        function setLocationInSession(location) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "set_location.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.send("location=" + location);
+    }
         window.onload = initMap;
     </script>
 
