@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 05, 2025 at 05:54 AM
+-- Generation Time: Apr 05, 2025 at 05:56 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -38,13 +38,6 @@ CREATE TABLE `antrian_bojongsari` (
   `ip_address` varchar(45) NOT NULL,
   `telepon` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `antrian_bojongsari`
---
-
-INSERT INTO `antrian_bojongsari` (`id`, `device_id`, `generated_number`, `date`, `tanggal`, `random_number`, `nama`, `ip_address`, `telepon`) VALUES
-(116, '6d7e96b103f1e45c86ec607cd40250f6', NULL, '2025-04-05', '2025-04-05', 6, 'Apand', '::1', '32432414');
 
 -- --------------------------------------------------------
 
