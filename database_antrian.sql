@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 05, 2025 at 03:58 AM
+-- Generation Time: Apr 05, 2025 at 05:54 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -64,41 +64,6 @@ CREATE TABLE `antrian_karangsatria` (
   `telepon` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `antrian_karangsatria`
---
-
-INSERT INTO `antrian_karangsatria` (`id`, `device_id`, `generated_number`, `date`, `tanggal`, `random_number`, `nama`, `ip_address`, `telepon`) VALUES
-(120, '6d7e96b103f1e45c86ec607cd40250f6', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsad', '::1', 'asdsa213213'),
-(121, '6d7e96b103f1e45c86ec607casdsadsadd40250f6', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsad', '::1', 'asdsa213213'),
-(122, '6d7e96b103f1e45c86ec607cadsadsaasdsadsadd40250f6', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsadasdsadsad', '::1', 'asdsa213213'),
-(123, '6d7e96b103f1e4asdsad5c86ec607cadsadsaasdsadsadd40250f6', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsadasdsadsad', '::1', 'asdsa213213'),
-(124, '6d7e96b103f1e45c86ec607cadasdsadsadsaasdsadsadd40250f6', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsadasdsadsad', '::1', 'asdsa213213'),
-(125, '6d7e96b103f1e45c86ec607casdsadadsadsaasdsadsadd40250f6', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsadasdsadsad', '::1', 'asdsa213213'),
-(126, '6d7e96b103f1e45casdsadsad86ec607casdsadadsadsaasdsadsadd40250f6', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsadasdsadsad', '::1', 'asdsa213213'),
-(127, '6d7e96b103f1e45c86ec607cadasdsadsadsaasdsadsadd40250f6sadsad', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsadasdsadsad', '::1', 'asdsa213213'),
-(128, '6d7e96b103f1e45c86ec607casdasdadsadsaasdsadsadd40250f6', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsadasdsadsad', '::1', 'asdsa213213'),
-(129, '6d7e96b103f1e45casdsadsasdsadad86ec607casdsadadsadsaasdsadsadd40250f6', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsadasdsadsad', '::1', 'asdsa213213'),
-(130, '6d7e96b103f1e45casdasdasdsasadsasdsadad86ec607casdsadadsadsaasdsadsadd40250f6', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsadasdsadsad', '::1', 'asdsa213213'),
-(131, '6d7e96b103f1e45c86ec607cassadasdasddsadadsadsaasdsadsadd40250f6', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsadasdsadsad', '::1', 'asdsa213213'),
-(132, '6d7e96b103f1e45c86ec607csadsadsadasdsadadsadsaasdsadsadd40250f6', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsadasdsadsad', '::1', 'asdsa213213'),
-(133, '6d7e96b103f1e4asdsadasdsad5c86ec607cadsadsaasdsadsadd40250f6', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsadasdsadsad', '::1', 'asdsa213213'),
-(134, '6d7e96b103f1e45c86ec607cadasdsadsadsaasdsadsadd40250f6asdsad', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsadasdsadsad', '::1', 'asdsa213213'),
-(135, '6d7e96b103fsadasdsad1e45casdsadsad86ec607casdsadadsadsaasdsadsadd40250f6', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsadasdsadsad', '::1', 'asdsa213213'),
-(136, '6d7e96b103fsadsadsa1e4asdsad5c86ec607cadsadsaasdsadsadd40250f6', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsadasdsadsad', '::1', 'asdsa213213'),
-(137, '6d7e96b103f1e45casdasdasdsasadsasdsadad86ec607casdsadadsadasdsadsaasdsadsadd40250f6', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsadasdsadsad', '::1', 'asdsa213213'),
-(138, '6d7e96b103f1easdsad45c86ec607csadsadsadasdsadadsadsaasdsadsadd40250f6', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsadasdsadsad', '::1', 'asdsa213213'),
-(139, '6d7e96b103asdsadsafsadsadsa1e4asdsad5c86ec607cadsadsaasdsadsadd40250f6', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsadasdsadsad', '::1', 'asdsa213213'),
-(140, '6d7e96b1asdsadsa03fsadsadsa1e4asdsad5c86ec607cadsadsaasdsadsadd40250f6', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsadasdsadsad', '::1', 'asdsa213213'),
-(141, '6d7e96b103fsadsadadsadsa1e4asdsad5c86ec607cadsadsaasdsadsadd40250f6', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsadasdsadsad', '::1', 'asdsa213213'),
-(142, '6d7e96basdsadsad103f1e45c86ec607csadsadsadasdsadadsadsaasdsadsadd40250f6', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsadasdsadsad', '::1', 'asdsa213213'),
-(143, '6d7e96basdsada1asdsadsa03fsadsadsa1e4asdsad5c86ec607cadsadsaasdsadsadd40250f6', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsadasdsadsad', '::1', 'asdsa213213'),
-(144, '6d7e96b103fasdsadas1easdsad45c86ec607csadsadsadasdsadadsadsaasdsadsadd40250f6', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsadasdsadsad', '::1', 'asdsa213213'),
-(145, '6d7e9asdsad6b103f1e45c86ec607casdasdadsadsaasdsadsadd40250f6', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsadasdsadsad', '::1', 'asdsa213213'),
-(146, '6d7e96b103f1e45casdasdasdsasadsasdsadad86ec607casdsadadsaasdsadaddasdsadsaasdsadsadd40250f6', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsadasdsadsad', '::1', 'asdsa213213'),
-(147, '6d7e96asdsadab103fsadsadadsadsa1e4asdsad5c86ec607cadsadsaasdsadsadd40250f6', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsadasdsadsad', '::1', 'asdsa213213'),
-(148, '6d7e96b1asdsadaasdsadsa03fsadsadsa1e4asdsad5c86ec607cadsadsaasdsadsadd40250f6', NULL, '2025-04-05', '2025-04-05', 9, 'asdsadsadsadsadasdsadsad', '::1', 'asdsa213213');
-
 -- --------------------------------------------------------
 
 --
@@ -132,13 +97,6 @@ CREATE TABLE `log_antrian_karangsatria` (
   `tanggal` date NOT NULL,
   `timestamp` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `log_antrian_karangsatria`
---
-
-INSERT INTO `log_antrian_karangsatria` (`id`, `device_id`, `ip_address`, `random_number`, `nama`, `telepon`, `tanggal`, `timestamp`) VALUES
-(44, '6d7e96b103f1e45c86ec607cd40250f6', '::1', 9, 'apand', '0829849324', '2025-04-04', '2025-04-04 08:17:52');
 
 -- --------------------------------------------------------
 
@@ -177,7 +135,8 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `key_name`, `value`) VALUES
-(1, 'jam_reset', '07:20');
+(1, 'jam_reset', '07:20'),
+(2, 'admin_pin', '1111');
 
 --
 -- Indexes for dumped tables
@@ -236,7 +195,7 @@ ALTER TABLE `antrian_bojongsari`
 -- AUTO_INCREMENT for table `antrian_karangsatria`
 --
 ALTER TABLE `antrian_karangsatria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=149;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `log_antrian_bojongsari`
@@ -248,7 +207,7 @@ ALTER TABLE `log_antrian_bojongsari`
 -- AUTO_INCREMENT for table `log_antrian_karangsatria`
 --
 ALTER TABLE `log_antrian_karangsatria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `lokasi_radius`
@@ -260,7 +219,7 @@ ALTER TABLE `lokasi_radius`
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

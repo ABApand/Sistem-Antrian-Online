@@ -100,14 +100,19 @@ $bojongsari = ['lat' => -6.408020836166138, 'lon' => 106.7364839729399, 'radius'
     <div class="container">
         <div class="header">
             <h2 class="text-primary">Anda harus berada Di Toko</h2>
-            <p class="text-muted">Temukan lokasi terdekat dan ambil nomor antrian dengan mudah!</p>
-            <p class="text-warning">Izinkan Permintaan Akses Lokasi!</p>
+            <p class="text-muted">Harap Menggunakan Jaringan Internet Sendiri, Tidak Menggunakan Hotspot / Wifi</p>
+            <p class="text-primary">Harap Memberikan Izin Permintaan Akses Lokasi!</p>
         </div>
 
         <div id="map"></div> <!-- Peta akan muncul di sini -->
 
         <div class="text-center">
-            <button class="btn btn-custom" onclick="getUserLocation()">Cek Lokasi Saya</button>
+            <button class="btn btn-custom" onclick="getUserLocation()">Cek Lokasi Saya</button><br>
+        </div>
+        <div class="text-center"><br>
+        <p class="text-muted">Silahkan baca artikel pada link dibawah ini untuk cara mengaktifkan akses lokasi</p>
+            <a href="https://support.google.com/accounts/answer/3467281?hl=id">Android</a> |
+            <a href="https://support.apple.com/id-id/102647">Iphone</a>
         </div>
     </div>
 
