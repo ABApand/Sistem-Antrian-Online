@@ -1,13 +1,16 @@
 <?php
 session_start();
 
-// Check if user came from index.php
-if (!isset($_SESSION['from_index']) || $_SESSION['from_index'] !== true) {
-    // Redirect to index.php if not accessed properly
-    header("Location: ../index.php");
+// Check if the location is valid and matches 'karangsatria'
+if ($_SESSION['validLocation'] !== 'karangsatria') {
+    // Redirect to the main page or show an error
+    header("Location: index.php");
     exit();
 }
-require '../config/database.php'; // Include the PDO database connection
+
+
+
+require 'config/database.php'; // Include the PDO database connection
 
 // Fetch jam_reset from the database using PDO
 try {
@@ -181,6 +184,7 @@ $pdo = null; // Close the PDO connection
             padding: 0;
             font-family: 'Poppins', sans-serif;
             background-color: #f4f4f4;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
         .container {
@@ -190,6 +194,7 @@ $pdo = null; // Close the PDO connection
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box; /* Prevent box from overflowing */
         }
 
         .logo img {
@@ -231,6 +236,7 @@ $pdo = null; // Close the PDO connection
             border-radius: 5px;
             font-size: 1em;
             width: 100%;
+            box-sizing: border-box;
         }
 
         button {
@@ -303,7 +309,7 @@ $pdo = null; // Close the PDO connection
 <body>
     <div class="container">
         <div class="logo">
-            <img src="../asset/lala_bundle.png" alt="Logo">
+            <img src="asset/lala_bundle.png" alt="Logo">
         </div>
         <div class="card">
             <h1>Antrian Karang Satria</h1>

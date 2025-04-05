@@ -2,7 +2,7 @@
 session_start();
 
 // Include the PDO database connection file
-require '../config/database.php'; // Koneksi database menggunakan PDO
+require 'config/database.php'; // Koneksi database menggunakan PDO
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Hapus semua data antrian untuk hari ini
