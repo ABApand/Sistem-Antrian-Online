@@ -1,10 +1,6 @@
 <?php
 session_start();
 
-// Set session timeout duration (e.g., 30 minutes)
-$timeout_duration = 1 * 60; // 30 minutes in seconds
-
-
 // Check if the user is allowed to access this page (i.e., their location is Karang Satria)
 if (!isset($_SESSION['user_location']) || $_SESSION['user_location'] !== 'karangsatria') {
     // If the user is not in the valid location, redirect them to the index page
