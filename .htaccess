@@ -1,0 +1,19 @@
+# Aktifkan URL rewriting
+RewriteEngine On
+
+# Rewrite URL 'antrian-ks' ke file 'antrian_ks.php' secara internal
+RewriteRule ^antrian-ks$ /antrian_ks.php [L]
+
+# Rewrite URL 'antrian-bjs' ke file 'antrian_bjs.php' secara internal
+RewriteRule ^antrian-bjs$ /antrian_bjs.php [L]
+
+# Contoh: Buat URL '/lokasi/ks' untuk mengarah ke 'antrian_ks.php'
+RewriteRule ^lokasi/ks$ /antrian_ks.php [L]
+
+# Contoh: Buat URL '/lokasi/bjs' untuk mengarah ke 'antrian_bjs.php'
+RewriteRule ^lokasi/bjs$ /antrian_bjs.php [L]
+
+# Opsional: Menyembunyikan ekstensi .php di URL
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^/]+)$ $1.php [L]
